@@ -1,0 +1,47 @@
+service: set-favourite-film
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  environment:
+    PK: id
+    TABLE:
+      Ref: myTable
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "Fn::GetAtt": [myTable, Arn]
+  runtime: nodejs14.x
+  region: sa-east-1
+
+functions:
+  function:
+    handler: index.handler
+    events:
+      - http:
+          path: favourite/film
+          method: post
+
+resources:
+  Resources:
+    myTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: favourite-film
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

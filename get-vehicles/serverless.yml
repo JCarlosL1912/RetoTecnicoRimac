@@ -1,0 +1,18 @@
+service: get-vehicles
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  environment:
+    HOST: swapi.py4e.com/api/
+    PATH: vehicles/
+  runtime: nodejs14.x
+  region: sa-east-1
+
+functions:
+  function:
+    handler: index.handler
+    events:
+      - http:
+          path: vehicles
+          method: get

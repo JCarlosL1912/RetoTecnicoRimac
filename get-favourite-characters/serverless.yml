@@ -1,0 +1,29 @@
+service: get-favourite-characters
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  environment:
+    PK: id
+    TABLE: favourite-characters
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: arn:aws:dynamodb:sa-east-1:270471814480:table/favourite-characters
+  runtime: nodejs14.x
+  region: sa-east-1
+
+functions:
+  function:
+    handler: index.handler
+    events:
+      - http:
+          path: favourite/character
+          method: get
