@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "88d7287a-8d36-431b-b971-c95272c2e3c7",
+		"name": "Servicios reto tecnico Rimac",
+		"description": "Esta es la colección de las APIs de integracion, obtencion y registro de datos desarrolladas para el reto tecnico del equipo de Indra projecto Rimac seguros.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get people",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://na9mmq495g.execute-api.sa-east-1.amazonaws.com/dev/people",
+					"protocol": "https",
+					"host": [
+						"na9mmq495g",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"people"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get films",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ml6okbt0fb.execute-api.sa-east-1.amazonaws.com/dev/films",
+					"protocol": "https",
+					"host": [
+						"ml6okbt0fb",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"films"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://thusqvqslj.execute-api.sa-east-1.amazonaws.com/dev/vehicles",
+					"protocol": "https",
+					"host": [
+						"thusqvqslj",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"vehicles"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save favourite character",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"personaje_id\": 10,\n    \"motivo\": \"El mejor maestro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pjgkjdw035.execute-api.sa-east-1.amazonaws.com/dev/favourite/character",
+					"protocol": "https",
+					"host": [
+						"pjgkjdw035",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"favourite",
+						"character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save favourite film",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pelicula_id\": 2,\n    \"motivo\": \"La segunda mejor pelicula\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dm49dykk64.execute-api.sa-east-1.amazonaws.com/dev/favourite/film",
+					"protocol": "https",
+					"host": [
+						"dm49dykk64",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"favourite",
+						"film"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get favourite character",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://8l9ihdd4mf.execute-api.sa-east-1.amazonaws.com/dev/favourite/character",
+					"protocol": "https",
+					"host": [
+						"8l9ihdd4mf",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"favourite",
+						"character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get favourite film",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://zagefwo6l1.execute-api.sa-east-1.amazonaws.com/dev/favourite/film",
+					"protocol": "https",
+					"host": [
+						"zagefwo6l1",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"favourite",
+						"film"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
