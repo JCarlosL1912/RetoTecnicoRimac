@@ -21,7 +21,7 @@ const service = {
         res = {};
         for (const [k,v] of Object.entries(val)) {
             switch (k) {
-                case 'personaje_id':
+                case 'pelicula_id':
                     res[k] = await this.getInnerData(v);
                     break;
                 default:
@@ -44,7 +44,7 @@ const service = {
             return data;
         } catch (e) {
             console.error("Ocurrio un error", e);
-            return response._405({service: 'callWsCharacters', code: 500, message: "Ocurrio un error al consultar servicio"}, true);
+            return response._405({service: 'callWsFilms', code: 500, message: "Ocurrio un error al consultar servicio"}, true);
         }
     },
 
@@ -52,44 +52,35 @@ const service = {
         let obj = {};
         for (const [key, value] of Object.entries(result)) {
             switch (key) {
-                case 'name':
-                    obj['nombre'] = value;
+                case 'title':
+                    obj['titulo'] = value;
                     break;
-                case 'height':
-                    obj['altura'] = value;
+                case 'episode_id':
+                    obj['episodio'] = value;
                     break;
-                case 'mass':
-                    obj['peso'] = value;
+                case 'opening_crawl':
+                    obj['introduccion'] = value;
                     break;
-                case 'hair_color':
-                    obj['cabello'] = value;
+                case 'producer':
+                    obj['productor'] = value;
                     break;
-                case 'skin_color':
-                    obj['piel'] = value;
-                    break;
-                case 'eye_color':
-                    obj['ojos'] = value;
-                    break;
-                case 'birth_year':
-                    obj['nacimiento'] = value;
-                    break;
-                case 'gender':
-                    obj['genero'] = value;
-                    break;
-                case 'homeworld':
-                    obj['hogar'] = value;
-                    break;
-                case 'films':
-                    obj['peliculas'] = value;
+                case 'release_date':
+                    obj['fecha_estreno'] = value;
                     break;
                 case 'species':
                     obj['especies'] = value;
                     break;
+                case 'starships':
+                    obj['naves'] = value;
+                    break;
                 case 'vehicles':
                     obj['vehiculos'] = value;
                     break;
-                case 'starships':
-                    obj['naves'] = value;
+                case 'characters':
+                    obj['personajes'] = value;
+                    break;
+                case 'planets':
+                    obj['planetas'] = value;
                     break;
                 case 'created':
                     obj['creado'] = value;

@@ -1,13 +1,13 @@
-service: get-favourite-characters
+service: get-favourite-films
 frameworkVersion: '3'
 
 provider:
   name: aws
   environment:
     HOST: swapi.py4e.com/api/
-    PATH: people/
+    PATH: films/
     PK: id
-    TABLE: favourite-characters
+    TABLE: favourite-film
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -18,7 +18,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: arn:aws:dynamodb:sa-east-1:270471814480:table/favourite-characters
+      Resource: arn:aws:dynamodb:sa-east-1:270471814480:table/favourite-film
   runtime: nodejs14.x
   region: sa-east-1
 
@@ -27,5 +27,5 @@ functions:
     handler: index.handler
     events:
       - http:
-          path: favourite/character
+          path: favourite/film
           method: get

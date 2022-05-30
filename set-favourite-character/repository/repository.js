@@ -13,7 +13,7 @@ const repository = {
                 id : uuidv4(),
                 personaje_id,
                 motivo,
-                created: moment().format(),
+                creado: moment().format(),
             },
         };
         return new Promise((resolve, reject) => {
